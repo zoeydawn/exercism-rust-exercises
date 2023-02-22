@@ -20,7 +20,12 @@ pub fn color_to_value(color: ResistorColor) -> u32 {
 }
 
 pub fn value_to_color_string(value: u32) -> String {
-    unimplemented!("convert the value {value} into a string representation of color")
+    let color = ResistorColor::from_int(value);
+
+    match color {
+        Ok(c) => return format!("{:?}", c),
+        Err(_) => return format!("value out of range"),
+    }
 }
 
 pub fn colors() -> Vec<ResistorColor> {
