@@ -17,7 +17,7 @@ pub enum ResistorColor {
 }
 
 pub fn color_to_value(color: ResistorColor) -> u32 {
-    return color.int_value();
+    color.int_value()
 }
 
 pub fn value_to_color_string(value: u32) -> String {
@@ -30,5 +30,5 @@ pub fn value_to_color_string(value: u32) -> String {
 }
 
 pub fn colors() -> Vec<ResistorColor> {
-    return all::<ResistorColor>().collect::<Vec<_>>();
+    all::<ResistorColor>().collect::<Vec<_>>()
 }
